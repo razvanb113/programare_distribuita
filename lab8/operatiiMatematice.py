@@ -9,9 +9,9 @@ while True:
         unghi = int(input("Introduceti o valoare pentru unghi, in grade: "))
         break
     except (ValueError):
-        print("Introduceti valori corecte!")
+        print("Valori incorecte! Reincercati!")
         continue
 
-print(f"Rădăcina pătrată a {numar} este {math.sqrt(numar)}")
+print(f"Rădăcina pătrată a lui {numar} este {math.sqrt(numar)}")
 print(f"Factorialul lui {numar} este {math.factorial(numar)}")
 print(f"Sinusul unghiului de {unghi} grade este {math.sin(math.radians(unghi))}")

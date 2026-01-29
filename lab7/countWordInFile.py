@@ -1,16 +1,20 @@
-def count_words_in_file(filename):
-    file = open(filename, "r")
-    
-    text = file.read()
-    file.close()
-    
-    count = 0
-    
-    words = text.split()
-    for _ in range(len(words)):
-        count += 1
-    
-    return count
+def numara_cuvinte_fisier(nume_fisier):
+    try:
+        fisier = open(nume_fisier, "r")
+        text = fisier.read()
+        fisier.close()
+    except FileNotFoundError:
+        print("Fișierul nu a fost găsit!")
+        return 0
 
-result = count_words_in_file("countWordInFile.txt")
-print("Numarul de cuvinte din fisier este de: ", result)
+    cuvinte = text.split()
+    nr_cuvinte = 0
+
+    for cuvant in cuvinte:
+        nr_cuvinte += 1
+
+    return nr_cuvinte
+
+
+rezultat = numara_cuvinte_fisier("countWordInFile.txt")
+print("Numărul de cuvinte din fișier este:", rezultat)
