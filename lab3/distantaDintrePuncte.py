@@ -1,28 +1,22 @@
 import math
 
-print ("Introduceti o serie de coordonate pentru a calcula distanta dintre acestea!")
 
-def calculeazaDistanta(x1, y1, x2, y2):
-    distanta = math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
-    return distanta
+def distanta_dintre_puncte(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-punctx1 = 0
-puncty1 = 0
-punctx2 = 0
-puncty2 = 0
+
+print("Introduceti coordonatele a doua puncte pentru a calcula distanta dintre ele.")
 
 while True:
     try:
-
-        punctx1 = int(input("Introduceti coordonata x pentru primul punct: "))
-        puncty1 = int(input("Introduceti coordonata y pentru primul punct: "))
-
-        punctx2 = int(input("Introduceti coordonata x pentru al doile punct: "))
-        puncty2 = int(input("Introduceti coordonata y pentru al doile punct: "))
-
+        x1 = int(input("x1 = "))
+        y1 = int(input("y1 = "))
+        x2 = int(input("x2 = "))
+        y2 = int(input("y2 = "))
         break
     except ValueError:
-        print("Ati introdus o data eronata! Incercati din nou!")
-        continue
+        print("Date invalide! Introduceti doar numere intregi.\n")
 
-print("Distanta dintre cele 2 puncte este: ", calculeazaDistanta(punctx1, puncty1, punctx2, puncty2))
+
+distanta = distanta_dintre_puncte(x1, y1, x2, y2)
+print(f"Distanta dintre cele doua puncte este: {distanta}")

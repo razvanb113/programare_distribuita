@@ -1,30 +1,25 @@
-print ("Acest program va returna true daca un cuvant citit de la tastatura este palindrom, fals altfel")
+print("Acest program verifica daca un cuvant este palindrom.")
 
-def is_palindrome(text):
-    invers = ""
-
-    for i in range(len(text) - 1, -1, -1):
-        invers += text[i]
+def verifica_palindrom(cuvant):
+    invers = cuvant[::-1]
 
     print(invers)
 
-    if invers == text:
+    if cuvant == invers:
         print("Cuvantul introdus este palindrom!")
     else:
         print("Cuvantul introdus nu este palindrom!")
 
 
 while True:
-    text = input("Introduceti un cuvant: ")
+    text = input("Introduceti un cuvant: ").strip()
 
-    if text.strip() == "":
-        print("Nu a fost introdus nimic!")
-        continue
+    if not text:
+        print("Nu a fost introdus niciun cuvant!")
     elif text.isdigit():
         print("Introduceti doar cuvinte!")
-        continue
+    else:
+        break
 
-    break
 
-is_palindrome(text)
-
+verifica_palindrom(text)

@@ -1,23 +1,42 @@
-print("Introduceti un numar caruia sa i se calculeze factorialul!")
+def calculeaza_factorial(x):
+    rezultat = 1
+    for i in range(1, x + 1):
+        rezultat *= i
+    return rezultat
 
-numar = 0
 
-def factorial(n):
-    if n == 0:
-        return 1
-    return n * factorial(n - 1)
+print("Introduceti un numar pentru calcularea factorialului!")
 
 while True:
     try:
-        numar = int(input("Introduceti un numar: "))
-
+        numar = int(input("Numar: "))
         if numar < 0:
-            print("Numarul introdus trebuie sa fie mai mare decat 0!")
-            continue
-
-        break
+            print("Numarul trebuie sa fie pozitiv!")
+        else:
+            break
     except ValueError:
-        print("Nu ati introdus un numar! Incercati din nou!")
-        continue
+        print("Valoare invalida! Va rugam introduceti un numar intreg.")
 
-print("Factorialul numarului", numar, "este: ", factorial(numar))
+
+print(f"Factorialul numarului {numar} este: {calculeaza_factorial(numar)}")
+def calculeaza_factorial(x):
+    rezultat = 1
+    for i in range(1, x + 1):
+        rezultat *= i
+    return rezultat
+
+
+print("Introduceti un numar pentru calcularea factorialului!")
+
+while True:
+    try:
+        numar = int(input("Numar: "))
+        if numar < 0:
+            print("Numarul trebuie sa fie pozitiv!")
+        else:
+            break
+    except ValueError:
+        print("Valoare invalida! Va rugam introduceti un numar intreg.")
+
+
+print(f"Factorialul numarului {numar} este: {calculeaza_factorial(numar)}")
