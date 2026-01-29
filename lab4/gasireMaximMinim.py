@@ -1,28 +1,28 @@
-l1 = []
-
 while True:
-
     try:
-
-        l1 = list(map(int, input("Introduceti o serie de numere intregi, separate prin caracterul ',': ").split(',')))
+        lista = list(
+            map(int, input("Introduceti o serie de numere intregi, separate prin virgula: ").split(","))
+        )
         break
     except ValueError:
         print("Valoare introdusa invalida! Reincercati!")
-        continue
 
-def min(l1):
-    minimul = l1[0]
-    for x in l1:
-        if x < minimul:
-            minimul = x
-    return minimul
 
-def max(l1):
-    maximul = l1[0]
-    for x in l1:
-        if x > maximul:
-            maximul = x
-    return maximul
+def calculeaza_minim(valori):
+    minim = valori[0]
+    for x in valori:
+        if x < minim:
+            minim = x
+    return minim
 
-print("Minimul din lista citita este: ", min(l1))
-print("Maximul din lista citita este: ", max(l1))
+
+def calculeaza_maxim(valori):
+    maxim = valori[0]
+    for x in valori:
+        if x > maxim:
+            maxim = x
+    return maxim
+
+
+print("Minimul din lista citita este:", calculeaza_minim(lista))
+print("Maximul din lista citita este:", calculeaza_maxim(lista))

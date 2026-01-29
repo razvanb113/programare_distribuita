@@ -1,21 +1,19 @@
-print("Acest program va elimina elemntele duplicate dintr-o lista!")
-
-lista1 = []
-lista2 = []
+print("Acest program elimina elementele duplicate dintr-o lista.")
 
 while True:
     try:
-
-        lista1 = list(map(int, input("Introduceti o serie de numere intregi, separate prin caracterul ',': ").split(',')))
+        lista_initiala = list(
+            map(int, input("Introduceti numere intregi separate prin virgula: ").split(","))
+        )
         break
     except ValueError:
-        print("Valoare introdusa invalida! Reincercati!")
-        continue
+        print("Date invalide! Incercati din nou.")
 
-print ("Lista citita este: ", lista1)
+print("Lista citita este:", lista_initiala)
 
-for i in lista1:
-    if i not in lista2:
-        lista2.append(i)
+lista_fara_duplicate = []
+for element in lista_initiala:
+    if element not in lista_fara_duplicate:
+        lista_fara_duplicate.append(element)
 
-print ("Lista fara elemente duplicate este: ", lista2)
+print("Lista fara elemente duplicate este:", lista_fara_duplicate)

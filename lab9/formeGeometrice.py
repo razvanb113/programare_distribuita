@@ -1,65 +1,64 @@
 import math
 
+
 class Shape:
-    
     def area(self):
-        raise NotImplementedError("Metoda area() trebuie implementată în subclasă!")
+        raise NotImplementedError("Metoda area() trebuie implementata in subclasa!")
 
 
 class Circle(Shape):
-    
-    def __init__(self, radius):
-      
-        if radius <= 0:
-            raise ValueError("Raza trebuie să fie pozitivă!")
-        self.radius = radius
-    
+    def __init__(self, raza):
+        if raza <= 0:
+            raise ValueError("Raza trebuie sa fie pozitiva!")
+        self.raza = raza
+
     def area(self):
-        return math.pi * self.radius ** 2
-    
+        return math.pi * self.raza ** 2
+
     def __str__(self):
-        return f"Cerc cu raza {self.radius} are aria {self.area():.2f}"
+        return f"Cerc cu raza {self.raza} are aria {self.area():.2f}"
 
 
 class Rectangle(Shape):
-    
-    
-    def __init__(self, width, height):
-        if width <= 0 or height <= 0:
-            raise ValueError("Lățimea și înălțimea trebuie să fie pozitive!")
-        self.width = width
-        self.height = height
-    
-    def area(self):
+    def __init__(self, latime, inaltime):
+        if latime <= 0 or inaltime <= 0:
+            raise ValueError("Latimea si inaltimea trebuie sa fie pozitive!")
+        self.latime = latime
+        self.inaltime = inaltime
 
-        return self.width * self.height
-    
+    def area(self):
+        return self.latime * self.inaltime
+
     def __str__(self):
-        return f"Dreptunghiul cu lungimea de {self.width} si latimea de {self.height} are aria {self.area()}"
+        return (
+            f"Dreptunghi cu latimea {self.latime} si inaltimea {self.inaltime} "
+            f"are aria {self.area()}"
+        )
 
 
 if __name__ == "__main__":
-    circle = Circle(5)
-    rectangle = Rectangle(10, 4)
-    
-    print(circle)  
-    print(rectangle) 
-    
-    shapes = [
+    cerc = Circle(5)
+    dreptunghi = Rectangle(10, 4)
+
+    print(cerc)
+    print(dreptunghi)
+
+    forme = [
         Circle(3),
         Rectangle(5, 6),
         Circle(7),
         Rectangle(8, 2),
         Circle(4.5)
     ]
-    
+
     print("\nLista de forme geometrice:")
-    total_area = 0
-    for shape in shapes:
-        print(f"{shape}")
-        total_area += shape.area()
-    
-    print(f"\nAria totală a tuturor formelor: {total_area:.2f}")
-    
+    aria_totala = 0
+
+    for forma in forme:
+        print(forma)
+        aria_totala += forma.area()
+
+    print(f"\nAria totala a tuturor formelor: {aria_totala:.2f}")
+
     c1 = Circle(5)
-    print(f"Area direct: {c1.area():.2f}")
+    print(f"Aria calculata direct: {c1.area():.2f}")

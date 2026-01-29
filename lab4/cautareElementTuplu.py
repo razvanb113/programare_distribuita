@@ -1,29 +1,23 @@
-numere = input("Introduceti o serie de numere separate prin virgula: ")
-elemente = numere.split(',')
+text = input("Introduceti o serie de numere separate prin virgula: ")
 
-lista_numere = []
-
-for i in elemente:
-    i = i.strip()
-
+lista = []
+for element in text.split(","):
+    element = element.strip()
     try:
-        numar = float(i)
-        lista_numere.append(numar)
+        lista.append(float(element))
     except ValueError:
-        print(f"Atentie: {i} nu este numar si a fost ignorat.")
+        print(f"Atentie: '{element}' nu este un numar si a fost ignorat.")
 
-tupla = tuple(lista_numere)
-
-print ("Tupla citita este: ", tupla)
+tuplu_numere = tuple(lista)
+print("Tupla citita este:", tuplu_numere)
 
 try:
-    element_cautare = float(input("Introduceti elementul pe care doriti sa il cautati: "))
+    cautat = float(input("Introduceti elementul pe care doriti sa il cautati: "))
 
-    if element_cautare in tupla:
-        index = tupla.index(element_cautare)
-        print(f"Valoarea {element_cautare} a fost gasit in tuplu la index-ul {index}")
+    if cautat in tuplu_numere:
+        pozitie = tuplu_numere.index(cautat)
+        print(f"Valoarea {cautat} a fost gasita in tuplu la index-ul {pozitie}")
     else:
         print("Elementul nu a fost gasit in tuplu!")
-
 except ValueError:
     print("Valoarea introdusa nu este numar!")
